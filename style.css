@@ -1,0 +1,64 @@
+.linea{        
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 2px 0;    
+}
+
+.burger{
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 30px ;
+    margin-top: 23px;
+    margin-left: 4px;
+}
+
+.immagine{
+    width: 85px;
+    height: 70px;
+    margin-left: 10px;
+}
+
+.immagine2{
+    width: 30px;
+    height: 25px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.icone{
+    margin-left: 80px;
+}
+.container{
+    display: flex;
+    margin-left: 1em;
+}
+
+.barraDiRicerca{
+    border-radius: 10px;
+    width: 600px;
+    height: 35px;
+    margin-top: 23px;
+    margin-left: 200px;
+}
+
+.ricerca{
+    position: absolute;
+    border-radius: 10px;
+    border-top: 1;    
+    top: 38px;
+    left: 930px;
+    width: 30px;
+    height: 23px;
+}
+
+.utente{
+    position: absolute;
+    top: 31px;
+    left: 1150px;
+    background-color: brown;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 140px;
+}
