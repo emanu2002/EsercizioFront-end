@@ -14,9 +14,8 @@
 }
 
 .immagine{
-    width: 85px;
-    height: 70px;
-    margin-left: 10px;
+    margin-top: 35px;
+    margin-left: 20px;
 }
 
 .immagine2{
@@ -27,11 +26,12 @@
 }
 
 .icone{
-    margin-left: 80px;
+    margin-left: 120px;
 }
 .container{
     display: flex;
     margin-left: 1em;
+    position: fixed;
 }
 
 .barraDiRicerca{
@@ -54,11 +54,18 @@
 
 .utente{
     position: absolute;
-    top: 31px;
-    left: 1150px;
+    top: 25px;
+    left: 1140px;
     background-color: brown;
     border-radius: 100%;
     width: 30px;
     height: 30px;
-    margin-left: 140px;
+    margin-left: 100px;
+}
+
+.iconePosizioni{
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: -20px;
 }
