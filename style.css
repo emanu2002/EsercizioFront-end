@@ -19,8 +19,8 @@
 }
 
 .immagine2{
-    width: 30px;
-    height: 25px;
+    width: 2%;
+    height: 2%;
     margin-top: 25px;
     margin-left: 20px;
 }
@@ -31,7 +31,7 @@
 .container{
     display: flex;
     margin-left: 1em;
-    position: fixed;
+    position: static; 
 }
 
 .barraDiRicerca{
@@ -58,15 +58,85 @@
     left: 1140px;
     background-color: brown;
     border-radius: 100%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin-left: 100px;
 }
 
 .iconePosizioni{
     display: inline-flex;
     flex-direction: column;
-    margin-top: 50px;
     margin-left: -20px;
+    height: 576px;
+    width: 200px;
     overflow: auto;
+}
+
+.navigatori{
+    display: flex;
+    margin-left: 20px;
+    margin-top: 5px;
+    height: 30px;
+    overflow-inline: auto;
+}
+
+.bottone{
+    width: 120px;
+    height: 30px;
+    margin: 2px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+.riquadri{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin-left: 25px;
+    margin-top: 8px;
+}
+
+.posizioneVideo{
+    display: flex;
+    margin-bottom: 10px; 
+    justify-content: right;
+}
+
+/*
+
+Mettere nel vue
+
+main div:hover{
+    transform: scale(1.1);
+}
+
+*/
+
+@media screen and (max-width: 600px) {
+    html{
+        overflow: scroll;
+    }
+    .riquadri{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin-left: 32px;
+        margin-top: 8px;
+    }
+}
+
+.prova{
+    display: flexbox;
+}
+
+html::-webkit-scrollbar {
+    width: 2px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: grey;
 }
