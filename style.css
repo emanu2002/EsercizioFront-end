@@ -1,45 +1,50 @@
 .linea{        
-    width: 25px;
+    width: 20px;
     height: 3px;
     background-color: black;
-    margin: 2px 0;    
+    margin-bottom: 2px;
 }
 
 .burger{
     display: inline-flex;
     flex-direction: column;
-    margin-right: 30px ;
-    margin-top: 23px;
-    margin-left: 4px;
+    margin-right: 5% ;
+    margin-top: 18%;
+    margin-left: 5%;
 }
 
 .immagine{
-    margin-top: 35px;
-    margin-left: 20px;
+    margin-top: 10%;
+    margin-left: 8%;
 }
 
 .immagine2{
-    width: 2%;
-    height: 2%;
-    margin-top: 25px;
-    margin-left: 20px;
-}
-
-.icone{
-    margin-left: 120px;
+    width: 25px;
+    height: 25px;
+    margin-top: 19px;
+    margin-left: 2%;
 }
 .container{
     display: flex;
-    margin-left: 1em;
-    position: static; 
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconaRicerca{
+    margin-top: 20px;
+    margin-left: -30px;
+    height: 30px; 
+    background: none; 
+    border: white;
 }
 
 .barraDiRicerca{
     border-radius: 10px;
-    width: 600px;
-    height: 35px;
-    margin-top: 23px;
-    margin-left: 200px;
+    width: 70%;
+    height: 30px;
+    margin-top:20px;
+    margin-left: 15%;
 }
 
 .ricerca{
@@ -53,14 +58,11 @@
 }
 
 .utente{
-    position: absolute;
-    top: 25px;
-    left: 1140px;
     background-color: brown;
     border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    margin-left: 100px;
+    width: 25px;
+    height: 25px;
+    margin-top:20px;
 }
 
 .iconePosizioni{
@@ -102,6 +104,13 @@
     justify-content: right;
 }
 
+.icone{
+    display: flex;
+    width: 10%; 
+    align-items: baseline; 
+    margin-top: 10px;
+}
+
 /*
 
 Mettere nel vue
@@ -115,6 +124,8 @@ main div:hover{
 @media screen and (max-width: 600px) {
     html{
         overflow: scroll;
+        width: 100%;
+        height: 100%;
     }
     .riquadri{
         width: 100px;
@@ -122,6 +133,47 @@ main div:hover{
         background-color: blue;
         margin-left: 32px;
         margin-top: 8px;
+    }
+
+    .immagine{
+        display: none;
+    }
+
+    .immagine2{
+        width: 25px;
+        height: 25px;
+        margin-top: 13px;
+    }
+
+    .utente{
+        background-color: brown;
+        border-radius: 0%;
+        width: 80px;
+        height: 32px;
+        margin-top:20px;
+        margin-left: -5px;
+    }
+
+    .icone{
+        display: flex;
+        justify-content: center;
+        width: 10px; 
+        align-items: baseline; 
+        margin-top: -2px;
+        margin-right: 25%;
+    }
+
+    .main{
+        display: block;
+        width: auto;
+    }
+
+    .barraDiRicerca{
+        border-radius: 10px;
+        width: 70%;
+        height: 30px;
+        margin-top:20px;
+        margin-left: -10px;
     }
 }
 

@@ -5,31 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link per importare le icone-->   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>You Tube</title>
 </head>
 <body>
     <header>
-        <div class="container"> 
-            <!--burger-->
-            <div class="burger">
-                <div class="linea"></div>
-                <div class="linea"></div>
-                <div class="linea"></div>
-            </div>        
+        <div class="container">             
+            <div style="display: flex; width: 10%;">
+                <!--burger-->
+                <div class="burger">
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                </div>                      
+                <!--immagine-->                
+                <img src="youTube.png" alt="immagine" class="immagine">
+            </div>
 
-            <!--immagine-->
-            <i class="fa-brands fa-youtube fa-xl immagine"></i>
-            <!--barra di ricerca-->
-            <input type="search" id="ricerca" class="barraDiRicerca" placeholder="Cerca ">
-            <i class="fa-solid fa-magnifying-glass fa-lg" style="margin-top: 40px;margin-left: -28px;""></i>
-            <img src="microfono.png" alt="microfono" class="immagine2">
+            <div style="display: flex; width: 70%; align-items: center;">
+                <!--barra di ricerca-->
+                <input type="search" id="ricerca" class="barraDiRicerca" placeholder="Cerca">
+                <button class="iconaRicerca"><i class="fa-solid fa-magnifying-glass fa-xl" ></i></button>
+                <img src="microfono.png" alt="microfono" class="immagine2" >
+            </div>
+
             <!--icone varie-->
             <div class="icone">
-                <i class="fa-sharp fa-solid fa-video fa-lg" style="margin-top: 40px;margin-left: 40px;" ></i>         
-                <i class="fa-solid fa-bell immagine2 fa-lg" style="margin-top: 40px;margin-left: 40px;"></i>             
-                <div class="utente"> <h2 style="position: absolute;top:-16px; left:10px; color: white; ">E</h2></div>         
+                <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
+                <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
+                <div class="utente">
+                    <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
+                </div>         
             </div>
         </div> 
     </header>
