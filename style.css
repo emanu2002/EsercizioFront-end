@@ -68,18 +68,32 @@
 .iconePosizioni{
     display: inline-flex;
     flex-direction: column;
-    margin-left: -20px;
-    height: 576px;
-    width: 200px;
+    margin-left: -25px;
+    height:51%;
+    width: 100%;
     overflow: auto;
+}
+
+.iconeLaterali{
+    display: flex; 
+    align-items: center; 
+    margin-top: -25px;
+}
+
+main{
+    width: 100%;
+}
+
+aside{
+    width: 16%;
 }
 
 .navigatori{
     display: flex;
-    margin-left: 20px;
-    margin-top: 5px;
-    height: 30px;
-    overflow-inline: auto;
+    height: 50px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .bottone{
@@ -166,14 +180,33 @@ main div:hover{
     .main{
         display: block;
         width: auto;
+        width: 70%;
+    }
+    
+    aside{
+        width: 30%;
     }
 
     .barraDiRicerca{
         border-radius: 10px;
         width: 70%;
-        height: 30px;
+        height: 50%;
         margin-top:20px;
-        margin-left: -10px;
+        margin-left: -10px;  
+    }
+
+    .bottone{
+        width: 70px;
+        height: 30px;
+        margin: 2px;
+        border-radius: 5px;
+        border-color: gray;
+    }
+
+    .iconeLaterali{
+        display: inline-flex;
+        flex-direction: column;
+        align-items: baseline;
     }
 }
 
