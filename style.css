@@ -1,15 +1,27 @@
 .linea{        
-    width: 20px;
-    height: 3px;
+    width: 18px;
+    height: 2px;
     background-color: black;
     margin-bottom: 2px;
+}
+
+body{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.article{
+    overflow: scroll; 
+    height: 40.5%; 
+    width: 100%;
 }
 
 .burger{
     display: inline-flex;
     flex-direction: column;
     margin-right: 5% ;
-    margin-top: 18%;
+    margin-top: 20%;
     margin-left: 5%;
 }
 
@@ -24,11 +36,13 @@
     margin-top: 19px;
     margin-left: 2%;
 }
+
 .container{
     display: flex;
     width: auto;
     justify-content: space-between;
     align-items: center;
+    margin-top: -20px;
 }
 
 .iconaRicerca{
@@ -69,7 +83,7 @@
     display: inline-flex;
     flex-direction: column;
     margin-left: -25px;
-    height:51%;
+    height:40.5%;
     width: 100%;
     overflow: auto;
 }
@@ -89,9 +103,7 @@ aside{
 }
 
 .navigatori{
-    display: flex;
-    height: 50px;
-    width: 100%;
+    display: flexbox;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -110,6 +122,7 @@ aside{
     background-color: red;
     margin-left: 25px;
     margin-top: 8px;
+    border-radius: 25px;
 }
 
 .posizioneVideo{
@@ -125,6 +138,10 @@ aside{
     margin-top: 10px;
 }
 
+.descrizioneVideo{
+    text-align: center;
+}
+
 /*
 
 Mettere nel vue
@@ -136,36 +153,38 @@ main div:hover{
 */
 
 @media screen and (max-width: 600px) {
-    html{
-        overflow: scroll;
-        width: 100%;
-        height: 100%;
+    body{
+        max-width: 400px; 
+        margin: 0 auto;
+        overflow: hidden;
     }
+
     .riquadri{
-        width: 100px;
-        height: 100px;
+        width: 300px;
+        height: 140px;
         background-color: blue;
-        margin-left: 32px;
+        margin-left:10%;
+        margin-top: 8px;
+    }    
+
+    .lineaMostraVideo{
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .descrizioneVideo{
+        margin-left: 25%;
         margin-top: 8px;
     }
 
-    .immagine{
+    .burger{
         display: none;
     }
 
-    .immagine2{
-        width: 25px;
-        height: 25px;
-        margin-top: 13px;
-    }
-
-    .utente{
-        background-color: brown;
-        border-radius: 0%;
-        width: 80px;
-        height: 32px;
-        margin-top:20px;
-        margin-left: -5px;
+    .immagine{
+        height: 35px;
+        width: 90px;
+        margin-top: 40%;
     }
 
     .icone{
@@ -174,25 +193,43 @@ main div:hover{
         width: 10px; 
         align-items: baseline; 
         margin-top: -2px;
-        margin-right: 25%;
+        margin-right: 10%;
     }
 
-    .main{
-        display: block;
-        width: auto;
-        width: 70%;
+    .immagine2{
+        width: 20px;
+        height: 20px;
+        margin-top: 13px;
     }
-    
-    aside{
-        width: 30%;
+
+    .utente{
+        background-color: brown;
+        border-radius: 0%;
+        width: 32cxzpx;
+        height: 32px;
+        margin-top:20px;
     }
 
     .barraDiRicerca{
         border-radius: 10px;
-        width: 70%;
+        width: 40%;
         height: 50%;
-        margin-top:20px;
-        margin-left: -10px;  
+        margin-top:20px; 
+        margin-left: 30%;
+    }
+
+    .iconePosizioni{
+        display: none;
+    }
+
+    html{
+        overflow-x: hidden;
+        display: block;
+    }
+
+    .article{
+        display: 50%;
+        height: 100%;
     }
 
     .bottone{
@@ -203,25 +240,57 @@ main div:hover{
         border-color: gray;
     }
 
+    .navigatori{
+        height: 50px;
+    }
+}
+
+.lineaMostraVideo{
+    display: flexbox;
+}
+
+*::-webkit-scrollbar {
+    width: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: grey!important;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: grey;
+}
+
+
+/*
+body{
+        overflow: hidden;
+    }
+    
+    
+
+    
+
+    
+
     .iconeLaterali{
         display: inline-flex;
         flex-direction: column;
         align-items: baseline;
     }
-}
 
-.prova{
-    display: flexbox;
-}
+    .navigatori{
+        display: flex;
+        height: auto;
+        overflow-x: auto;
+    }
 
-html::-webkit-scrollbar {
-    width: 2px;
-}
+    .article{
+        height: 80%;
+        overflow: hidden;
+    }
 
-html::-webkit-scrollbar-thumb {
-    background-color: grey;
-}
 
-html::-webkit-scrollbar-track {
-    background-color: grey;
-}
+
+
+*/

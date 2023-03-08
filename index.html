@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -11,262 +13,286 @@
     <title>You Tube</title>
 </head>
 <body>
-    <header>
-        <div class="container">             
-            <div style="display: flex; width: 10%;">
-                <!--burger-->
-                <div class="burger">
-                    <div class="linea"></div>
-                    <div class="linea"></div>
-                    <div class="linea"></div>
-                </div>                      
-                <!--immagine-->                
-                <img src="youTube.png" alt="immagine" class="immagine">
-            </div>
-
-            <div style="display: flex; width: 70%; align-items: center;">
-                <!--barra di ricerca-->
-                <input type="search" id="ricerca" class="barraDiRicerca" placeholder="Cerca">
-                <button class="iconaRicerca"><i class="fa-solid fa-magnifying-glass fa-xl" ></i></button>
-                <img src="microfono.png" alt="microfono" class="immagine2" >
-            </div>
-
-            <!--icone varie-->
-            <div class="icone">
-                <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
-                <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
-                <div class="utente">
-                    <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
-                </div>         
-            </div>
-        </div> 
-    </header>
-
-    <div style="display: inline-flex; width: 100%;">
-        <aside>       
-            <div class="iconePosizioni">
-                <ul style="list-style-type: none; margin-left: -10px;">
-                    <li style="margin-top:10px; margin-bottom: 30px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-house"></i>
-                            <h5 style="margin-left: 10px;">Home</h5>
-                        </div>                    
-                    </li>
-                    <li style="margin-bottom: 30px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-film"></i>
-                            <h5 style="margin-left: 10px;">Short</h5>
-                        </div>  
-                    </li>
-                    <li>
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-circle-play"></i>
-                            <h5 style="margin-left: 10px;">Iscrizioni</h5>
-                        </div>
-                    </li>
-                </ul>            
-                <!--linea separatoria-->
-                <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-    
-                <ul style="list-style-type: none; line-height: 22px; margin-left: -10px;">
-                    <li style="margin-top:-2px; margin-bottom: 30px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-images"></i>
-                            <h5 style="margin-left: 12px;">Raccolta</h5>
-                        </div>
-                    </li>
-                    <li style="margin-bottom: 30px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                            <h5 style="margin-left: 10px;">Cronologia</h5>
-                        </div>
-                    </li>
-                    <li style="margin-bottom: 30px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-clock"></i>
-                            <h5 style="margin-left: 10px;">Guarda piu' tardi</h5>
-                        </div>
-                    </li>
-                    <li style="margin-bottom: 3px;">
-                        <div class="iconeLaterali">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <h5 style="margin-left: 10px;">Video piaciuti</h5>
-                        </div>
-                    </li>
-                </ul>
-                <!--linea separatoria-->
-                <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-    
-                <!-- FARE UN ARRAY DI "ISCIZIONI" E CON V-FOR MOSTRARE-->
-                <div style="margin-left: 25px;">
-                    <h3 style="margin-top: 1px;">Iscrizioni</h3>
-                    <div class="iconeLaterali">
-                        <div style="margin-right: 5px; border-radius: 100%; width: 20px; height: 20px; background-color: red;">
-                        </div>
-                        <h3>Gli autogol</h3>  
-                    </div>
-    
+    <div id="spa">
+        <header>
+            <div class="container">             
+                <div style="display: flex; width: 10%;">
+                    <!--burger-->
+                    <div class="burger">
+                        <div class="linea"></div>
+                        <div class="linea"></div>
+                        <div class="linea"></div>
+                    </div>                      
+                    <!--immagine-->                
+                    <img src="youTube.png" alt="immagine" class="immagine">
                 </div>
     
-                <!--linea separatoria-->
-                <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                <div style="margin-left: 25px;">
-                    <h3 style="margin-top: -2px;">Esplora</h3>
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-fire fa-lg"></i>
-                        <h4 style="margin-left: 8px;">Tendenza</h4>
-                    </div>
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-music"></i>
-                        <h4 style="margin-left: 8px;">Musica</h4>
-                    </div>
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-video"></i>
-                        <h4 style="margin-left: 8px;">Film</h4>
-                    </div>
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-trophy"></i>
-                        <h4 style="margin-left: 8px;">Sport</h4>
-                    </div>
+                <div style="display: flex; width: 70%; align-items: center;">
+                    <!--barra di ricerca-->
+                    <input type="search" id="ricerca" class="barraDiRicerca" placeholder="Cerca">
+                    <button class="iconaRicerca"><i class="fa-solid fa-magnifying-glass fa-lg" ></i></button>
+                    <img src="microfono.png" alt="microfono" class="immagine2" >
                 </div>
     
-                <!--linea separatoria-->
-                <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                <div style="margin-left: 25px;">
-                    <h3 style="margin-top: -2px;">Altro da YouTube</h3>
-                    <div class="iconeLaterali">
-                        <i class="fa-brands fa-youtube"></i>
-                        <h4 style="margin-left: 8px;">YouTube Music</h4>
-                    </div>
-                    <div class="iconeLaterali">
-                        <i class="fa-brands fa-youtube"></i>
-                        <h4 style="margin-left: 8px;">YouTube Kids</h4>
-                    </div>
+                <!--icone varie-->
+                <div class="icone">
+                    <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
+                    <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
+                    <div class="utente">
+                        <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
+                    </div>         
                 </div>
-                <!--linea separatoria-->
-                <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                <div style="margin-left: 25px;">
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-gear"></i>
-                        <h4 style="margin-left: 8px;">Impostazioni</h4>
-                    </div>
-                    <div class="iconeLaterali">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <h4 style="margin-left: 8px;">FAQ</h4>
-                    </div>
-                </div>
-            </div>
-        </aside>    
+            </div> 
+        </header>
+    
+        <div style="display: inline-flex; width: 100%; height: 100%;">
+            <aside>       
+                <div class="iconePosizioni">
+                    <ul style="list-style-type: none; margin-left: -10px; line-height: 7%; ">
+                        <li style="margin-top:10px; margin-bottom: 30px;">
+                            <div class="iconeLaterali" id="Home" v-on:click="paginaCorrente('Home')">
+                                <i class="fa-solid fa-house"></i>
+                                <h4 style="margin-left: 10px;">Home</h4>
+                            </div>                    
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <div class="iconeLaterali" id="Short" v-on:click="paginaCorrente('Short')">
+                                <i class="fa-solid fa-film"></i>
+                                <h4 style="margin-left: 10px;">Short</h4>
+                            </div>  
+                        </li>
+                        <li>
+                            <div class="iconeLaterali" id="Iscrizioni" v-on:click="paginaCorrente('Iscrizioni')">
+                                <i class="fa-solid fa-circle-play"></i>
+                                <h4 style="margin-left: 10px;">Iscrizioni</h4>
+                            </div>
+                        </li>
+                    </ul>            
+                    <!--linea separatoria-->
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
         
-        <main>
-            <nav class="navigatori">
-                <!--bottini navigazione-->
-                <div>
-                    <input type="submit" value="Tutti" class="bottone">
-                    <input type="submit" value="Sport" class="bottone">
-                    <input type="submit" value="Calcio" class="bottone">
-                    <input type="submit" value="Musica" class="bottone">
-                    <input type="submit" value="Fitnes" class="bottone">
-                    <input type="submit" value="Giochi" class="bottone">
-                    <input type="submit" value="Matematica" class="bottone">                                
-                </div>
-            </nav>
-            <div style="overflow: scroll; height: 46.5%; width: 100%;">
-                <!--Non posso andare a capo perche ho messo display:flex e non lo permetter di fare-->
-                <div class="prova">
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
+                    <ul style="list-style-type: none; line-height: 22px; margin-left: -10px;  line-height: 7%;">
+                        <li style="margin-top:-2px; margin-bottom: 30px;">
+                            <div class="iconeLaterali" id="Raccolta" v-on:click="paginaCorrente('Raccolta')">
+                                <i class="fa-solid fa-images"></i>
+                                <h4 style="margin-left: 12px;">Raccolta</h4>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <div class="iconeLaterali" id="Cronologia" v-on:click="paginaCorrente('Cronologia')">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <h4 style="margin-left: 10px;">Cronologia</h4>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 30px;">
+                            <div class="iconeLaterali" id="GuardaPiuTardi" v-on:click="paginaCorrente('GuardaPiuTardi')">
+                                <i class="fa-solid fa-clock"></i>
+                                <h4 style="margin-left: 10px; overflow-wrap: break-word;">Guarda piu' tardi</h4>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 3px;">
+                            <div class="iconeLaterali" id="VideoPiacuti" v-on:click="paginaCorrente('VideoPiacuti')">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <h4 style="margin-left: 10px;">Video piaciuti</h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--linea separatoria-->
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+        
+                    <!-- FARE UN ARRAY DI "ISCIZIONI" E CON V-FOR MOSTRARE-->
+                    <div style="margin-left: 25px;">
+                        <h3 style="margin-top: 1px;">Iscrizioni</h3>
+                        <div class="iconeLaterali">
+                            <div style="margin-right: 5px; border-radius: 100%; width: 20px; height: 20px; background-color: red;">
+                            </div>
+                            <h4>Gli autogol</h4>  
+                        </div>
+        
                     </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
+        
+                    <!--linea separatoria-->
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+                    <div style="margin-left: 25px;">
+                        <h3 style="margin-top: -2px;">Esplora</h3>
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-fire fa-lg"></i>
+                            <h4 style="margin-left: 8px;">Tendenza</h4>
+                        </div>
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-music"></i>
+                            <h4 style="margin-left: 8px;">Musica</h4>
+                        </div>
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-video"></i>
+                            <h4 style="margin-left: 8px;">Film</h4>
+                        </div>
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-trophy"></i>
+                            <h4 style="margin-left: 8px;">Sport</h4>
+                        </div>
                     </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
+        
+                    <!--linea separatoria-->
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+                    <div style="margin-left: 25px;">
+                        <h3 style="margin-top: -2px;">Altro da YouTube</h3>
+                        <div class="iconeLaterali">
+                            <i class="fa-brands fa-youtube"></i>
+                            <h4 style="margin-left: 8px;">YouTube Music</h4>
+                        </div>
+                        <div class="iconeLaterali">
+                            <i class="fa-brands fa-youtube"></i>
+                            <h4 style="margin-left: 8px;">YouTube Kids</h4>
+                        </div>
                     </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                </div>
-
-                <div class="prova">
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                </div>
-
-                <div class="prova">
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                </div>
-
-                <div class="prova">
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
-                    </div>
-                    <div style="display: inline-flex; flex-direction: column;">
-                        <div class="riquadri"></div>
-                        <p style="margin-left: 60px;margin-top: 8px;">Descrizione</p>
+                    <!--linea separatoria-->
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+                    <div style="margin-left: 25px;">
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-gear"></i>
+                            <h4 style="margin-left: 8px;">Impostazioni</h4>
+                        </div>
+                        <div class="iconeLaterali">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <h4 style="margin-left: 8px;">FAQ</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </main>
+            </aside>    
+            
+            <main>
+                <nav class="navigatori">
+                    <!--bottini navigazione-->
+                    <div >
+                        <input type="submit" value="Tutti" class="bottone">
+                        <input type="submit" value="Sport" class="bottone">
+                        <input type="submit" value="Calcio" class="bottone">
+                        <input type="submit" value="Musica" class="bottone">
+                        <input type="submit" value="Fitnes" class="bottone">
+                        <input type="submit" value="Giochi" class="bottone">
+                        <input type="submit" value="Matematica" class="bottone">                                
+                    </div>
+                </nav>
+                <div class="article">
+                    <div class="lineaMostraVideo">
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                    </div>
+    
+                    <div class="lineaMostraVideo">
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                    </div>
+    
+                    <div class="lineaMostraVideo">
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                    </div>
+    
+                    <div class="lineaMostraVideo">
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                    </div>
+    
+                    <div class="lineaMostraVideo">
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                        <div style="display: inline-flex; flex-direction: column;">
+                            <div class="riquadri"></div>
+                            <h4 class="descrizioneVideo">Descrizione2</h4>
+                        </div>
+                    </div>
+                </div>
+            </main>
     </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
