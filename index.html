@@ -34,14 +34,19 @@
                     <img src="microfono.png" alt="microfono" class="immagine2" >
                 </div>
     
-                <!--icone varie-->
-                <div class="icone">
-                    <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
-                    <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
-                    <div class="utente">
-                        <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
-                    </div>         
-                </div>
+                <span v-if="login">
+                    <!--icone varie-->
+                    <div class="icone">
+                        <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
+                        <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
+                        <div class="utente">
+                            <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
+                        </div>         
+                    </div>
+                </span>
+                <span v-else>
+                    <input type="button" value="Login" v-on:click="Paginalogin()" style="margin-top: 30px; margin-right: 35px;">
+                </span>
             </div> 
         </header>
     
