@@ -72,8 +72,7 @@ body{
 
 .utente{
     background-color: brown;
-    border-radius: 100%;
-    width: 25px;
+    width: 55px;
     height: 25px;
     margin-top:20px;
 }
@@ -107,9 +106,16 @@ main{
 }
 
 .article{
-    overflow: auto;
-    max-height: 600px;
+    display: inline-flex;
+    overflow: scroll;
+    flex-wrap: wrap;
+    width: 45.8%;
+    height: 600px;
     margin-left: 20px;
+}
+
+.lineaMostraVideo{
+    display: flexbox;
 }
 
 .bottone{
@@ -146,30 +152,37 @@ main{
     text-align: center;
 }
 
-/*
-
-Mettere nel vue
-
-main div:hover{
-    transform: scale(1.1);
+.navBar{
+    display: none;
 }
 
-*/
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     body{
-        max-width: 400px; 
-        margin: 0 auto;
+        width: 100%;
         overflow: hidden;
+        overflow-y: hidden;
+    }
+
+    .burger{
+        display: none;
+    }
+
+    .iconePosizioni{
+        display: none;
+    }
+
+    html{
+        display: block;
+        overflow-y: hidden;
     }
 
     .riquadri{
-        width: 300px;
+        width: 320px;
         height: 140px;
         background-color: blue;
         margin-left:10%;
         margin-top: 8px;
-    }    
+    }
 
     .lineaMostraVideo{
         display: inline-flex;
@@ -181,14 +194,16 @@ main div:hover{
         margin-top: 8px;
     }
 
-    .burger{
-        display: none;
-    }
-
     .immagine{
         height: 35px;
         width: 90px;
         margin-top: 40%;
+    }
+
+    .immagine2{
+        width: 20px;
+        height: 20px;
+        margin-top: 13px;
     }
 
     .icone{
@@ -197,13 +212,7 @@ main div:hover{
         width: 10px; 
         align-items: baseline; 
         margin-top: -2px;
-        margin-right: 10%;
-    }
-
-    .immagine2{
-        width: 20px;
-        height: 20px;
-        margin-top: 13px;
+        margin-right: 50px;
     }
 
     .utente{
@@ -217,23 +226,8 @@ main div:hover{
     .barraDiRicerca{
         border-radius: 10px;
         width: 40%;
-        height: 50%;
         margin-top:20px; 
         margin-left: 30%;
-    }
-
-    .iconePosizioni{
-        display: none;
-    }
-
-    html{
-        overflow-x: hidden;
-        display: block;
-    }
-
-    .article{
-        display: 50%;
-        height: 100%;
     }
 
     .bottone{
@@ -249,15 +243,22 @@ main div:hover{
         margin-left: 15px;
         padding: 4px;
         background-color: white;
-        width: 310px;
+        width: 312px;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
     }
-}
 
-.lineaMostraVideo{
-    display: flexbox;
+    .navBar{
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .article{
+        margin-left: 10px;
+    }
+
 }
 
 *::-webkit-scrollbar {

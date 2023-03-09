@@ -68,7 +68,7 @@
                             </div>  
                         </li>
                         <li>
-                            <div class="iconeLaterali" id="Iscrizioni" v-on:click="paginaCorrente('Iscrizioni')">
+                            <div class="iconeLaterali" id="iscrizioni" v-on:click="paginaCorrente('iscrizioni')">
                                 <i class="fa-solid fa-circle-play"></i>
                                 <h4 style="margin-left: 10px;">Iscrizioni</h4>
                             </div>
@@ -79,19 +79,19 @@
         
                     <ul style="list-style-type: none; line-height: 22px; margin-left: -10px;  line-height: 7%;">
                         <li style="margin-top:-2px; margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="Raccolta" v-on:click="paginaCorrente('Raccolta')">
+                            <div class="iconeLaterali" id="raccolta" v-on:click="paginaCorrente('raccolta')">
                                 <i class="fa-solid fa-images"></i>
                                 <h4 style="margin-left: 12px;">Raccolta</h4>
                             </div>
                         </li>
                         <li style="margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="Cronologia" v-on:click="paginaCorrente('Cronologia')">
+                            <div class="iconeLaterali" id="cronologia" v-on:click="paginaCorrente('cronologia')">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                                 <h4 style="margin-left: 10px;">Cronologia</h4>
                             </div>
                         </li>
                         <li style="margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="GuardaPiuTardi" v-on:click="paginaCorrente('GuardaPiuTardi')">
+                            <div class="iconeLaterali" id="guardaPiuTardi" v-on:click="paginaCorrente('guardaPiuTardi')">
                                 <i class="fa-solid fa-clock"></i>
                                 <h4 style="margin-left: 10px;">Guarda </h4>
                                 <h4 style="margin-left: 3px; margin-right: 2px;"> piu'</h4>
@@ -99,7 +99,7 @@
                             </div>
                         </li>
                         <li style="margin-bottom: 3px;">
-                            <div class="iconeLaterali" id="VideoPiacuti" v-on:click="paginaCorrente('VideoPiacuti')">
+                            <div class="iconeLaterali" id="videoPiacuti" v-on:click="paginaCorrente('videoPiacuti')">
                                 <i class="fa-solid fa-thumbs-up"></i>
                                 <h4 style="margin-left: 10px;">Video piaciuti</h4>
                             </div>
@@ -173,93 +173,50 @@
             <article>
                 <nav>
                     <!--bottini navigazione-->
-                    <div class="navigatori">
-                        <input type="submit" value="Tutti" class="bottone">
-                        <input type="submit" value="Sport" class="bottone">
-                        <input type="submit" value="Calcio" class="bottone">
-                        <input type="submit" value="Musica" class="bottone">
-                        <input type="submit" value="Fitnes" class="bottone">
-                        <input type="submit" value="Giochi" class="bottone">
-                        <input type="submit" value="Matematica" class="bottone">
-                        <input type="submit" value="Matematica" class="bottone">
-                        <input type="submit" value="Matematica" class="bottone">
-                        <input type="submit" value="Matematica" class="bottone">                                
+                    <div class="navigatori" v-if="paginaC === 'Home'">
+                        <input type="submit" value="Tutti" class="bottone" v-on:click="mostraVideo('tutti')">
+                        <input type="submit" value="Sport" class="bottone" v-on:click="mostraVideo('sport')">
+                        <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
+                        <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
+                        <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
+                        <input type="submit" value="Giochi" class="bottone" v-on:click="mostraVideo('giochi')">
+                        <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
                     </div>
                 </nav>
 
                 <section>
-                    <div class="article">
-                        <div class="lineaMostraVideo">
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                        </div>
-
-                        <div class="lineaMostraVideo">
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                        </div>
-
-                        <div class="lineaMostraVideo">
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                            <div style="display: inline-flex; flex-direction: column;">
-                                <div class="riquadri"></div>
-                                <h4 class="descrizioneVideo">Descrizione2</h4>
-                            </div>
-                        </div>
+                    <div class="article" id="riquadroVideo">
+                        <div class="lineaMostraVideo" v-on:mouseleave="leaveMouse(indice)" v-on:mouseover="overMouse(indice)" v-for="(video, indice) in video">
+                            <div style="display: inline-flex; flex-direction: column; overflow: hidden;" >
+                                <div class="riquadri" v-bind:id=" `${indice}`"></div>
+                                <h4 class="descrizioneVideo"> {{video.descrizione}}</h4>
+                            </div>                        
+                        </div>                   
                     </div>
                 </section>
             </article>
+        </div>
+
+        <div class="navBar">
+            <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-house"></i>
+                <h4 style="margin-top: 10px;">Home</h4>
+            </div>
+
+            <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-film"></i>
+                <h4 style="margin-top: 10px;">Short</h4>
+            </div>
+
+            <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-circle-play"></i>
+                <h4 style="margin-top: 10px;">Iscrizioni</h4>
+            </div>
+
+            <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-images"></i>
+                <h4 style="margin-top: 10px;">Raccolta</h4>
+            </div>
         </div>
     </div>
 
