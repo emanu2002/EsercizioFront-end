@@ -1,20 +1,12 @@
+body{
+    overflow: hidden;
+}
+
 .linea{        
     width: 18px;
     height: 2px;
     background-color: black;
     margin-bottom: 2px;
-}
-
-body{
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-}
-
-.article{
-    overflow: scroll; 
-    height: 42.5%; 
-    width: 100%;
 }
 
 .burger{
@@ -23,6 +15,13 @@ body{
     margin-right: 5% ;
     margin-top: 20%;
     margin-left: 5%;
+}
+
+.corpo{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 2px;
 }
 
 .immagine{
@@ -82,9 +81,9 @@ body{
 .iconePosizioni{
     display: inline-flex;
     flex-direction: column;
-    margin-left: -25px;
-    height:43.5%;
-    width: 100%;
+    max-height: 620px;
+    max-width: 1100px;
+    margin-left: -20px;
     overflow: auto;
 }
 
@@ -95,21 +94,26 @@ body{
 }
 
 main{
-    width: 100%;
-}
-
-aside{
-    width: 16%;
+    display: inline-flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .navigatori{
-    display: flexbox;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: flex;
+    overflow: auto;
+    width: 20%;
+    margin-left: 40px;
+}
+
+.article{
+    overflow: auto;
+    max-height: 600px;
+    margin-left: 20px;
 }
 
 .bottone{
-    width: 120px;
+    width: 370px;
     height: 30px;
     margin: 2px;
     border-radius: 5px;
@@ -241,7 +245,14 @@ main div:hover{
     }
 
     .navigatori{
-        height: 50px;
+        margin: 4px, 4px;
+        margin-left: 15px;
+        padding: 4px;
+        background-color: white;
+        width: 310px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
 }
 
@@ -251,14 +262,15 @@ main div:hover{
 
 *::-webkit-scrollbar {
     width: 2px;
+    height: 4px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: grey!important;
+    background-color: gray!important;
 }
 
 *::-webkit-scrollbar-track {
-    background-color: grey;
+    background-color: white;
 }
 
 

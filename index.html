@@ -48,9 +48,10 @@
                     <input type="button" value="Login" v-on:click="Paginalogin()" style="margin-top: 30px; margin-right: 35px;">
                 </span>
             </div> 
-        </header>
-    
-        <div style="display: inline-flex; width: 100%; height: 100%;">
+        </header>     
+        
+        <div class="corpo">
+            <!--PRIMA COLONNA-->
             <aside>       
                 <div class="iconePosizioni">
                     <ul style="list-style-type: none; margin-left: -10px; line-height: 7%; ">
@@ -92,7 +93,9 @@
                         <li style="margin-bottom: 30px;">
                             <div class="iconeLaterali" id="GuardaPiuTardi" v-on:click="paginaCorrente('GuardaPiuTardi')">
                                 <i class="fa-solid fa-clock"></i>
-                                <h4 style="margin-left: 10px; overflow-wrap: break-word;">Guarda piu' tardi</h4>
+                                <h4 style="margin-left: 10px;">Guarda </h4>
+                                <h4 style="margin-left: 3px; margin-right: 2px;"> piu'</h4>
+                                <h4> tardi</h4>
                             </div>
                         </li>
                         <li style="margin-bottom: 3px;">
@@ -164,140 +167,106 @@
                         </div>
                     </div>
                 </div>
-            </aside>    
-            
-            <main>
-                <nav class="navigatori">
+            </aside> 
+
+            <!--SECONDA COLONNA-->
+            <article>
+                <nav>
                     <!--bottini navigazione-->
-                    <div >
+                    <div class="navigatori">
                         <input type="submit" value="Tutti" class="bottone">
                         <input type="submit" value="Sport" class="bottone">
                         <input type="submit" value="Calcio" class="bottone">
                         <input type="submit" value="Musica" class="bottone">
                         <input type="submit" value="Fitnes" class="bottone">
                         <input type="submit" value="Giochi" class="bottone">
+                        <input type="submit" value="Matematica" class="bottone">
+                        <input type="submit" value="Matematica" class="bottone">
+                        <input type="submit" value="Matematica" class="bottone">
                         <input type="submit" value="Matematica" class="bottone">                                
                     </div>
                 </nav>
-                <div class="article">
-                    <div class="lineaMostraVideo">
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
+
+                <section>
+                    <div class="article">
+                        <div class="lineaMostraVideo">
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
                         </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
+
+                        <div class="lineaMostraVideo">
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
                         </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                    </div>
-    
-                    <div class="lineaMostraVideo">
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                    </div>
-    
-                    <div class="lineaMostraVideo">
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                    </div>
-    
-                    <div class="lineaMostraVideo">
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
+
+                        <div class="lineaMostraVideo">
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="riquadri"></div>
+                                <h4 class="descrizioneVideo">Descrizione2</h4>
+                            </div>
                         </div>
                     </div>
-    
-                    <div class="lineaMostraVideo">
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                        <div style="display: inline-flex; flex-direction: column;">
-                            <div class="riquadri"></div>
-                            <h4 class="descrizioneVideo">Descrizione2</h4>
-                        </div>
-                    </div>
-                </div>
-            </main>
+                </section>
+            </article>
+        </div>
     </div>
-    </div>
+
+
+
+
+    <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
