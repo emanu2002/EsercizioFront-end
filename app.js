@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#spa',
     data: {
         paginaC:"Home",
-        login: false,
+        loggato: false,
         tutti:[{"descrizione":"descrzione1"},{"descrizione":"descrzione2"},{"descrizione":"descrzione3"},{"descrizione":"descrzione4"},{"descrizione":"descrzione5"},
                {"descrizione":"descrzione6"},{"descrizione":"descrzione7"},{"descrizione":"descrzione8"},{"descrizione":"descrzione9"},{"descrizione":"descrzione10"},
                {"descrizione":"descrzione11"},{"descrizione":"descrzione12"},{"descrizione":"descrzione13"},{"descrizione":"descrzione14"},{"descrizione":"descrzione15"}],
@@ -14,6 +14,7 @@ var app = new Vue({
         cronologia: [{"descrizione":"cronologia1"},{"descrizione":"cronologia2"},{"descrizione":"cronologia3"},{"descrizione":"cronologia4"},{"descrizione":"cronologia5"}],
         guardaPiuTardi: [{"descrizione":"guardaPiuTardi1"},{"descrizione":"guardaPiuTardi2"},{"descrizione":"guardaPiuTardi3"},{"descrizione":"guardaPiuTardi4"},{"descrizione":"guardaPiuTardi5"}],
         burgerOn: true,
+        paginaLogin : false,
     },
     methods: {
         paginaCorrente: function(paginaNuova){
@@ -23,25 +24,26 @@ var app = new Vue({
                     document.getElementsByClassName("article")[0].style.display = "flex";
                     document.getElementsByClassName("article")[0].style.flexDirection= "row";
                     document.getElementsByClassName("article")[0].style.justifyContent= "start";
-                    var shortList = document.querySelectorAll(".riquadri");
-                    for(var i = 0 ; i <shortList.length;i++){
+                    for(var i = 0 ; i <self.tutti.length;i++){ //uso tutti per ridimensionare tutti i video
                         document.getElementsByClassName("riquadri")[i].style.height = "200px";
                         document.getElementsByClassName("riquadri")[i].style.marginLeft = "25px";
                         document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "0%";
                     }
                     self.mostraVideo(paginaNuova);
                 }else{
-                    console.log("short");
+                    /*SHORT*/
                     document.getElementsByClassName("article")[0].style.display = "inline-flex";
                     document.getElementsByClassName("article")[0].style.flexDirection = "column";
                     document.getElementsByClassName("article")[0].style.justifyContent= "center";
                     var shortList = document.querySelectorAll(".riquadri");
                     for(var i = 0 ; i <shortList.length;i++){
-                        document.getElementsByClassName("riquadri")[i].style.height = "500px";
+                        document.getElementsByClassName("riquadri")[i].style.height = "510px";
+                        document.getElementsByClassName("riquadri")[i].style.width = "300px";
                         document.getElementsByClassName("riquadri")[i].style.marginLeft = "100%";
                         document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "100%";
                     }
                 }
+                console.log(self.burgerOn);
                 if(self.burgerOn){ /* Se burger è stato cliccato non cambio colore*/
                     document.getElementById(paginaNuova).style.backgroundColor = "#d3d3d3";
                     document.getElementById(self.paginaC).style.backgroundColor = "white";
@@ -51,7 +53,12 @@ var app = new Vue({
         },
         Paginalogin: function(){
             var self=this;
-            self.login=true;
+            self.paginaLogin=true;
+        },
+        autenticazione: function(){
+            var self=this;
+            self.loggato=true;
+            self.paginaLogin=false;
         },
         overMouse: function(indice){
             document.getElementById(indice).style.scale = 1.1;
@@ -127,7 +134,10 @@ var app = new Vue({
         leaveBottoneAside: function(indice){
             var self=this;
             document.getElementById(indice).style.backgroundColor = "white";
-            document.getElementById(self.paginaC).style.backgroundColor = "#d3d3d3";
+            console.log(self.burgerOn);
+            if(self.burgerOn){
+                document.getElementById(self.paginaC).style.backgroundColor = "#d3d3d3";
+            }
         }
     },
     mounted() {
