@@ -171,26 +171,34 @@
 
             <!--SECONDA COLONNA-->
             <article>
-                <nav>
-                    <!--bottini navigazione-->
-                    <div class="navigatori" v-if="paginaC === 'Home'">
-                        <input type="submit" value="Tutti" class="bottone" v-on:click="mostraVideo('tutti')">
-                        <input type="submit" value="Sport" class="bottone" v-on:click="mostraVideo('sport')">
-                        <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
-                        <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
-                        <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
-                        <input type="submit" value="Giochi" class="bottone" v-on:click="mostraVideo('giochi')">
-                        <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    </div>
-                </nav>
-
+                <!--bottini navigazione-->
+                <div class="navigatori" v-if="paginaC === 'Home'">
+                    <input type="submit" value="Tutti" class="bottone" v-on:click="mostraVideo('tutti')">
+                    <input type="submit" value="Sport" class="bottone" v-on:click="mostraVideo('sport')">
+                    <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
+                    <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
+                    <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">               
+                    <input type="submit" value="Tutti" class="bottone" v-on:click="mostraVideo('tutti')">
+                    <input type="submit" value="Sport" class="bottone" v-on:click="mostraVideo('sport')">
+                    <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
+                    <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
+                    <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
+                    
+                </div>
                 <section>
                     <div class="article" id="riquadroVideo">
-                        <div class="lineaMostraVideo" v-on:mouseleave="leaveMouse(indice)" v-on:mouseover="overMouse(indice)" v-for="(video, indice) in video">
-                            <div style="display: inline-flex; flex-direction: column; overflow: hidden;" >
-                                <div class="riquadri" v-bind:id=" `${indice}`"></div>
-                                <h4 class="descrizioneVideo"> {{video.descrizione}}</h4>
-                            </div>                        
+                        <div v-on:mouseleave="leaveMouse(indice)" v-on:mouseover="overMouse(indice)" v-for="(video, indice) in video">
+                            <div class="riquadri" v-bind:id=" `${indice}`"></div>
+                            <h4 class="descrizioneVideo"> {{video.descrizione}}</h4>
                         </div>                   
                     </div>
                 </section>
