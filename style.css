@@ -71,10 +71,13 @@ body{
 }
 
 .utente{
+    display: flex;
     background-color: brown;
     width: 55px;
     height: 25px;
     margin-top:20px;
+    border-radius: 20px;
+    align-items: center;
 }
 
 .iconePosizioni{
@@ -98,7 +101,7 @@ body{
     justify-content: start;
     flex-wrap: nowrap;
     overflow: auto;
-    height: 38px;
+    height: 39px;
     width: 100%;
 }
 

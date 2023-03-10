@@ -13,22 +13,39 @@ var app = new Vue({
         iscrizioni: [{"descrizione":"iscrizione1"},{"descrizione":"iscrizione2"},{"descrizione":"iscrizione3"},{"descrizione":"iscrizione4"},{"descrizione":"iscrizione5"}],
         cronologia: [{"descrizione":"cronologia1"},{"descrizione":"cronologia2"},{"descrizione":"cronologia3"},{"descrizione":"cronologia4"},{"descrizione":"cronologia5"}],
         guardaPiuTardi: [{"descrizione":"guardaPiuTardi1"},{"descrizione":"guardaPiuTardi2"},{"descrizione":"guardaPiuTardi3"},{"descrizione":"guardaPiuTardi4"},{"descrizione":"guardaPiuTardi5"}],
-        
+        burgerOn: true,
     },
     methods: {
         paginaCorrente: function(paginaNuova){
             var self=this;
-            if(paginaNuova != "Home"){
-                document.getElementById("riquadroVideo").style.width = "100%";
-            }else{
-                document.getElementById("riquadroVideo").style.width = "45.8%";
-            }
             if(paginaNuova != self.paginaC){
                 if(paginaNuova !== "Short"){
+                    document.getElementsByClassName("article")[0].style.display = "flex";
+                    document.getElementsByClassName("article")[0].style.flexDirection= "row";
+                    document.getElementsByClassName("article")[0].style.justifyContent= "start";
+                    var shortList = document.querySelectorAll(".riquadri");
+                    for(var i = 0 ; i <shortList.length;i++){
+                        document.getElementsByClassName("riquadri")[i].style.height = "200px";
+                        document.getElementsByClassName("riquadri")[i].style.marginLeft = "25px";
+                        document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "0%";
+                    }
                     self.mostraVideo(paginaNuova);
+                }else{
+                    console.log("short");
+                    document.getElementsByClassName("article")[0].style.display = "inline-flex";
+                    document.getElementsByClassName("article")[0].style.flexDirection = "column";
+                    document.getElementsByClassName("article")[0].style.justifyContent= "center";
+                    var shortList = document.querySelectorAll(".riquadri");
+                    for(var i = 0 ; i <shortList.length;i++){
+                        document.getElementsByClassName("riquadri")[i].style.height = "500px";
+                        document.getElementsByClassName("riquadri")[i].style.marginLeft = "100%";
+                        document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "100%";
+                    }
                 }
-                document.getElementById(paginaNuova).style.backgroundColor = "grey";
-                document.getElementById(self.paginaC).style.backgroundColor = "white";
+                if(self.burgerOn){ /* Se burger è stato cliccato non cambio colore*/
+                    document.getElementById(paginaNuova).style.backgroundColor = "#d3d3d3";
+                    document.getElementById(self.paginaC).style.backgroundColor = "white";
+                }
                 self.paginaC= paginaNuova;
             }
         },
@@ -75,11 +92,47 @@ var app = new Vue({
                     self.video = self.tutti;
                     break;
             }            
+        },
+        burgerMenu: function(){
+            var self=this;
+            var list = document.querySelectorAll(".iconeLaterali");
+            for(var i=0;i<list.length;i++){
+                if(self.burgerOn){
+                    document.getElementsByClassName("iconeLaterali")[i].style.display= "inline-flex";
+                    document.getElementsByClassName("iconeLaterali")[i].style.flexDirection= "column";
+                    document.getElementsByClassName("iconeLaterali")[i].style.alignItems ="center";
+                    if(i === 0 || i === 1){
+                        document.getElementsByClassName("iconeLaterali")[i].style.marginLeft  ="10px";
+                    }
+                    document.getElementsByClassName("iconeLaterali")[i].style.backgroundColor = "white";
+                    document.getElementsByTagName("article")[0].style.height= "600px"; //cambio grandezza tag aside
+                }else{
+                    document.getElementsByClassName("iconeLaterali")[i].style.display= "flex";
+                    document.getElementsByClassName("iconeLaterali")[i].style.flexDirection= "row";
+                    if(i === 0 || i === 1){
+                        document.getElementsByClassName("iconeLaterali")[i].style.marginLeft  ="0px";
+                    }
+                    document.getElementById(self.paginaC).style.backgroundColor = "#d3d3d3";
+                }
+            }
+            if(self.burgerOn){
+                self.burgerOn = false;
+            }else{
+                self.burgerOn = true;
+            }
+        },
+        overBottoneAside: function(indice){
+            document.getElementById(indice).style.backgroundColor = "#d3d3d3";
+        },
+        leaveBottoneAside: function(indice){
+            var self=this;
+            document.getElementById(indice).style.backgroundColor = "white";
+            document.getElementById(self.paginaC).style.backgroundColor = "#d3d3d3";
         }
     },
     mounted() {
         var self=this;
         self.video = self.tutti;
-        document.getElementById("Home").style.backgroundColor = "grey";
+        document.getElementById("Home").style.backgroundColor = "#d3d3d3";
     }
 });

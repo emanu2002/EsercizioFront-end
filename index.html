@@ -16,9 +16,9 @@
     <div id="spa">
         <header>
             <div class="container">             
-                <div style="display: flex; width: 10%;">
+                <div style="display: flex; width: 10%;" v-on:click="burgerMenu">
                     <!--burger-->
-                    <div class="burger">
+                    <div class="burger" >
                         <div class="linea"></div>
                         <div class="linea"></div>
                         <div class="linea"></div>
@@ -40,7 +40,7 @@
                         <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
                         <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
                         <div class="utente">
-                            <h4 style="margin-left: 30%; margin-top: 5px; margin-right: 25%;color: white;" >E</h4>
+                            <h4 style="color: white; padding-left: 2px; margin-right: 2px;" >E</h4>
                         </div>         
                     </div>
                 </span>
@@ -56,60 +56,58 @@
                 <div class="iconePosizioni">
                     <ul style="list-style-type: none; margin-left: -10px; line-height: 7%; ">
                         <li style="margin-top:10px; margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="Home" v-on:click="paginaCorrente('Home')">
+                            <div class="iconeLaterali" id="Home" v-on:click="paginaCorrente('Home')" v-on:mouseleave="leaveBottoneAside('Home')" v-on:mouseover="overBottoneAside('Home')">
                                 <i class="fa-solid fa-house"></i>
                                 <h4 style="margin-left: 10px;">Home</h4>
                             </div>                    
                         </li>
                         <li style="margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="Short" v-on:click="paginaCorrente('Short')">
+                            <div class="iconeLaterali" id="Short" v-on:click="paginaCorrente('Short')" v-on:mouseleave="leaveBottoneAside('Short')" v-on:mouseover="overBottoneAside('Short')">
                                 <i class="fa-solid fa-film"></i>
                                 <h4 style="margin-left: 10px;">Short</h4>
                             </div>  
                         </li>
                         <li>
-                            <div class="iconeLaterali" id="iscrizioni" v-on:click="paginaCorrente('iscrizioni')">
+                            <div class="iconeLaterali" id="iscrizioni" v-on:click="paginaCorrente('iscrizioni')" v-on:mouseleave="leaveBottoneAside('iscrizioni')" v-on:mouseover="overBottoneAside('iscrizioni')">
                                 <i class="fa-solid fa-circle-play"></i>
                                 <h4 style="margin-left: 10px;">Iscrizioni</h4>
                             </div>
                         </li>
                     </ul>            
                     <!--linea separatoria-->
-                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
         
                     <ul style="list-style-type: none; line-height: 22px; margin-left: -10px;  line-height: 7%;">
                         <li style="margin-top:-2px; margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="raccolta" v-on:click="paginaCorrente('raccolta')">
+                            <div class="iconeLaterali" id="raccolta" v-on:click="paginaCorrente('raccolta')" v-on:mouseleave="leaveBottoneAside('raccolta')" v-on:mouseover="overBottoneAside('raccolta')">
                                 <i class="fa-solid fa-images"></i>
                                 <h4 style="margin-left: 12px;">Raccolta</h4>
                             </div>
                         </li>
-                        <li style="margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="cronologia" v-on:click="paginaCorrente('cronologia')">
+                        <li style="margin-bottom: 30px;" v-if="burgerOn">
+                            <div class="iconeLaterali" id="cronologia" v-on:click="paginaCorrente('cronologia')" v-on:mouseleave="leaveBottoneAside('cronologia')" v-on:mouseover="overBottoneAside('cronologia')">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                                 <h4 style="margin-left: 10px;">Cronologia</h4>
                             </div>
                         </li>
-                        <li style="margin-bottom: 30px;">
-                            <div class="iconeLaterali" id="guardaPiuTardi" v-on:click="paginaCorrente('guardaPiuTardi')">
+                        <li style="margin-bottom: 30px;" v-if="burgerOn">
+                            <div class="iconeLaterali" id="guardaPiuTardi" v-on:click="paginaCorrente('guardaPiuTardi')" v-on:mouseleave="leaveBottoneAside('guardaPiuTardi')" v-on:mouseover="overBottoneAside('guardaPiuTardi')">
                                 <i class="fa-solid fa-clock"></i>
-                                <h4 style="margin-left: 10px;">Guarda </h4>
-                                <h4 style="margin-left: 3px; margin-right: 2px;"> piu'</h4>
-                                <h4> tardi</h4>
+                                <h4 style="margin-left: 10px;">Guarda piu' tardi</h4>
                             </div>
                         </li>
-                        <li style="margin-bottom: 3px;">
-                            <div class="iconeLaterali" id="videoPiacuti" v-on:click="paginaCorrente('videoPiacuti')">
+                        <li style="margin-bottom: 3px;" v-if="burgerOn">
+                            <div class="iconeLaterali" id="videoPiacuti" v-on:click="paginaCorrente('videoPiacuti')" v-on:mouseleave="leaveBottoneAside('videoPiacuti')" v-on:mouseover="overBottoneAside('videoPiacuti')">
                                 <i class="fa-solid fa-thumbs-up"></i>
                                 <h4 style="margin-left: 10px;">Video piaciuti</h4>
                             </div>
                         </li>
                     </ul>
                     <!--linea separatoria-->
-                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
         
                     <!-- FARE UN ARRAY DI "ISCIZIONI" E CON V-FOR MOSTRARE-->
-                    <div style="margin-left: 25px;">
+                    <div style="margin-left: 25px;" v-if="burgerOn">
                         <h3 style="margin-top: 1px;">Iscrizioni</h3>
                         <div class="iconeLaterali">
                             <div style="margin-right: 5px; border-radius: 100%; width: 20px; height: 20px; background-color: red;">
@@ -120,8 +118,8 @@
                     </div>
         
                     <!--linea separatoria-->
-                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                    <div style="margin-left: 25px;">
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
+                    <div style="margin-left: 25px;" v-if="burgerOn">
                         <h3 style="margin-top: -2px;">Esplora</h3>
                         <div class="iconeLaterali">
                             <i class="fa-solid fa-fire fa-lg"></i>
@@ -142,8 +140,8 @@
                     </div>
         
                     <!--linea separatoria-->
-                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                    <div style="margin-left: 25px;">
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
+                    <div style="margin-left: 25px;" v-if="burgerOn">
                         <h3 style="margin-top: -2px;">Altro da YouTube</h3>
                         <div class="iconeLaterali">
                             <i class="fa-brands fa-youtube"></i>
@@ -155,8 +153,8 @@
                         </div>
                     </div>
                     <!--linea separatoria-->
-                    <hr size="2" width="130" style="margin-left: 23px; color: gray;">
-                    <div style="margin-left: 25px;">
+                    <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
+                    <div style="margin-left: 25px;" v-if="burgerOn">
                         <div class="iconeLaterali">
                             <i class="fa-solid fa-gear"></i>
                             <h4 style="margin-left: 8px;">Impostazioni</h4>
@@ -178,21 +176,7 @@
                     <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
                     <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
                     <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">               
-                    <input type="submit" value="Tutti" class="bottone" v-on:click="mostraVideo('tutti')">
-                    <input type="submit" value="Sport" class="bottone" v-on:click="mostraVideo('sport')">
-                    <input type="submit" value="Calcio" class="bottone" v-on:click="mostraVideo('calcio')">
-                    <input type="submit" value="Musica" class="bottone" v-on:click="mostraVideo('musica')">
-                    <input type="submit" value="Fitnes" class="bottone" v-on:click="mostraVideo('fitnes')">
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">                                
-                    
+                    <input type="submit" value="Matematica" class="bottone" v-on:click="mostraVideo('matematica')">
                 </div>
                 <section>
                     <div class="article" id="riquadroVideo">
