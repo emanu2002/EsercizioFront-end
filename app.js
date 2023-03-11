@@ -23,9 +23,10 @@ var app = new Vue({
                 if(paginaNuova !== "Short"){
                     document.getElementsByClassName("article")[0].style.display = "flex";
                     document.getElementsByClassName("article")[0].style.flexDirection= "row";
-                    document.getElementsByClassName("article")[0].style.justifyContent= "start";
-                    for(var i = 0 ; i <self.tutti.length;i++){ //uso tutti per ridimensionare tutti i video
+                    var lista = document.querySelectorAll(".riquadri");
+                    for(var i = 0 ; i <lista.length;i++){ 
                         document.getElementsByClassName("riquadri")[i].style.height = "200px";
+                        document.getElementsByClassName("riquadri")[i].style.width = "200px";
                         document.getElementsByClassName("riquadri")[i].style.marginLeft = "25px";
                         document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "0%";
                     }
@@ -34,14 +35,13 @@ var app = new Vue({
                     /*SHORT*/
                     document.getElementsByClassName("article")[0].style.display = "inline-flex";
                     document.getElementsByClassName("article")[0].style.flexDirection = "column";
-                    document.getElementsByClassName("article")[0].style.justifyContent= "center";
                     var shortList = document.querySelectorAll(".riquadri");
                     for(var i = 0 ; i <shortList.length;i++){
                         document.getElementsByClassName("riquadri")[i].style.height = "510px";
                         document.getElementsByClassName("riquadri")[i].style.width = "300px";
                         document.getElementsByClassName("riquadri")[i].style.marginLeft = "100%";
                         document.getElementsByClassName("descrizioneVideo")[i].style.marginLeft = "100%";
-                    }
+                    } 
                 }
                 console.log(self.burgerOn);
                 if(self.burgerOn){ /* Se burger è stato cliccato non cambio colore*/
@@ -68,6 +68,7 @@ var app = new Vue({
         },
         mostraVideo: function(videoDaMostra){
             var self=this;
+            console.log("mostraVideo"+videoDaMostra);
             switch(videoDaMostra){
                 case "sport":
                     self.video = self.sport;

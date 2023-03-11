@@ -13,19 +13,21 @@
     <title>You Tube</title>
 </head>
 <body>
-    <div id="spa">
+    <div id="spa" style="height: 100%;">
         <div v-if="paginaLogin">
-            <div class="login">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Username" style="width: 400px; margin-bottom: 20px;">
-
-                <label for="password">Password</label>
-                <input type="text" id="password" placeholder="Password" style="width: 400px; margin-bottom: 20px;">
-
-                <input type="button" value="Login" v-on:click="autenticazione()" style="width: 100px; margin-left: 35%;">
-            </div>
+            <form>
+                <div class="login">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" id="username" placeholder="Username" class="inputText">
+    
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" id="password" placeholder="Password" class="inputText">
+    
+                    <input type="button" value="Login" v-on:click="autenticazione()" style="width: 100px; margin-left: 35%;">
+                </div>
+            </form>
         </div>
-        <div v-else>
+        <div v-else class="aa">
             <header>
                 <div class="container">             
                     <div style="display: flex; width: 10%;" v-on:click="burgerMenu">
@@ -50,10 +52,11 @@
                         <!--icone varie-->
                         <div class="icone">
                             <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
-                            <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>             
+                            <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>                      
+                            
                             <div class="utente">
                                 <h4 style="color: white; padding-left: 2px; margin-right: 2px;" >E</h4>
-                            </div>         
+                            </div>
                         </div>
                     </span>
                     <span v-else>
@@ -61,7 +64,7 @@
                     </span>
                 </div> 
             </header>     
-            
+        
             <div class="corpo">
                 <!--PRIMA COLONNA-->
                 <aside>       
@@ -178,7 +181,6 @@
                         </div>
                     </div>
                 </aside> 
-    
                 <!--SECONDA COLONNA-->
                 <article>
                     <!--bottini navigazione-->
@@ -197,10 +199,10 @@
                                 <h4 class="descrizioneVideo"> {{video.descrizione}}</h4>
                             </div>                   
                         </div>
-                    </section>
+                    </section>                    
                 </article>
-            </div>
-    
+            </div>   
+            
             <div class="navBar">
                 <div style="display: inline-flex; flex-direction: column; align-items: center;">
                     <i class="fa-solid fa-house"></i>
