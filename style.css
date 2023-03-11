@@ -194,6 +194,11 @@ button:hover {
     margin-bottom: 20px;
 }
 
+#btnLogin{
+    margin-left: 35%;
+    width: 100px;
+}
+
 @media screen and (max-width: 700px) {
     html{
         height: 100%;
@@ -241,9 +246,22 @@ button:hover {
     }
 
     .article{
-        display: flex;
+        display: inline-flex;
+        flex-direction: column;
         flex-wrap: wrap;    
         margin-top: 30px;
+    }
+
+    .immagine{
+        height: 25px;
+        width: 70px;
+        margin-top: 40%;
+    }
+
+    .immagine2{
+        width: 20px;
+        height: 20px;
+        margin-top: 13px;
     }
     
     .aa{
@@ -258,6 +276,23 @@ button:hover {
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
+    }
+
+    .barraDiRicerca {
+        margin-left: 17%;
+    }
+
+    .inputText{
+        width: 190px;
+        margin-bottom: 20px;
+    }
+
+    .login{
+        margin-left: 18%;
+    }
+
+    #btnLogin{
+        margin-left: 22%;
     }
 }
 

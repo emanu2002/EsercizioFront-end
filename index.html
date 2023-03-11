@@ -23,7 +23,9 @@
                     <label for="password"><b>Password</b></label>
                     <input type="password" id="password" placeholder="Password" class="inputText">
     
-                    <input type="button" value="Login" v-on:click="autenticazione()" style="width: 100px; margin-left: 35%;">
+                    <input type="button" value="Login" v-on:click="autenticazione()" id="btnLogin" >
+                    <input type="button" value="Annulla" v-on:click="paginaLogin = !paginaLogin" id="btnAnnulla" style="background-color: red; margin-top: 5px ;margin-left: 35%; width: 100px; color: white;">
+                    
                 </div>
             </form>
         </div>
@@ -54,8 +56,15 @@
                             <i class="fa-sharp fa-solid fa-video" style="margin-right: 20px;"></i>         
                             <i class="fa-solid fa-bell immagine2" style="padding-bottom: 5%; margin-right: 20px;"></i>                      
                             
-                            <div class="utente">
-                                <h4 style="color: white; padding-left: 2px; margin-right: 2px;" >E</h4>
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <div class="utente" v-on:click="menu = !menu">
+                                    <h4 style="color: blue; padding-left: 2px; margin-right: 2px;">E</h4>
+                                </div>
+                                <div style="display: inline-flex; flex-direction: column; background-color: pink; width: 150px;" v-if="menu">
+                                    <div style="border: 3px; border-color: black; margin-left: 15px;" v-on:click="loggato = !loggato"><b>LogOut</b></div>
+                                    <br/>
+                                    <div style="border: 3px; border-color: black; margin-left: 15px;" v-on:click="Paginalogin()"><b>Cambia Account</b></div>                                   
+                                </div>
                             </div>
                         </div>
                     </span>
@@ -204,22 +213,22 @@
             </div>   
             
             <div class="navBar">
-                <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <div style="display: inline-flex; flex-direction: column; align-items: center;" v-on:click="paginaCorrenteMobile('Home')">
                     <i class="fa-solid fa-house"></i>
                     <h4 style="margin-top: 10px;">Home</h4>
                 </div>
     
-                <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <div style="display: inline-flex; flex-direction: column; align-items: center;" v-on:click="paginaCorrenteMobile('Short')">
                     <i class="fa-solid fa-film"></i>
                     <h4 style="margin-top: 10px;">Short</h4>
                 </div>
     
-                <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <div style="display: inline-flex; flex-direction: column; align-items: center;" v-on:click="paginaCorrenteMobile('iscrizioni')">
                     <i class="fa-solid fa-circle-play"></i>
                     <h4 style="margin-top: 10px;">Iscrizioni</h4>
                 </div>
     
-                <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                <div style="display: inline-flex; flex-direction: column; align-items: center;" v-on:click="paginaCorrenteMobile('raccolta')">
                     <i class="fa-solid fa-images"></i>
                     <h4 style="margin-top: 10px;">Raccolta</h4>
                 </div>

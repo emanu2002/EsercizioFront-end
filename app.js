@@ -15,6 +15,7 @@ var app = new Vue({
         guardaPiuTardi: [{"descrizione":"guardaPiuTardi1"},{"descrizione":"guardaPiuTardi2"},{"descrizione":"guardaPiuTardi3"},{"descrizione":"guardaPiuTardi4"},{"descrizione":"guardaPiuTardi5"}],
         burgerOn: true,
         paginaLogin : false,
+        menu:false
     },
     methods: {
         paginaCorrente: function(paginaNuova){
@@ -51,6 +52,22 @@ var app = new Vue({
                 self.paginaC= paginaNuova;
             }
         },
+        paginaCorrenteMobile: function(paginaNuova){
+            var self=this;
+            if(paginaNuova == "Short"){
+                var shortList = document.querySelectorAll(".riquadri");
+                for(var i = 0 ; i <shortList.length;i++){
+                    document.getElementsByClassName("riquadri")[i].style.height = "410px";
+                    document.getElementsByClassName("riquadri")[i].style.width = "300px";
+                } 
+            }else{
+                var shortList = document.querySelectorAll(".riquadri");
+                for(var i = 0 ; i <shortList.length;i++){
+                    document.getElementsByClassName("riquadri")[i].style.height = "150px";
+                    document.getElementsByClassName("riquadri")[i].style.width = "280px";
+                }
+            }
+        },
         Paginalogin: function(){
             var self=this;
             self.paginaLogin=true;
@@ -68,7 +85,6 @@ var app = new Vue({
         },
         mostraVideo: function(videoDaMostra){
             var self=this;
-            console.log("mostraVideo"+videoDaMostra);
             switch(videoDaMostra){
                 case "sport":
                     self.video = self.sport;
