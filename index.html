@@ -132,7 +132,7 @@
                             <li style="margin-bottom: 3px;" v-if="burgerOn">
                                 <div class="iconeLaterali" id="videoPiacuti" v-on:click="paginaCorrente('videoPiacuti')" v-on:mouseleave="leaveBottoneAside('videoPiacuti')" v-on:mouseover="overBottoneAside('videoPiacuti')">
                                     <i class="fa-solid fa-thumbs-up"></i>
-                                    <h4 style="margin-left: 10px;">Video piaciuti</h4>
+                                    <h4 style="margin-left: 10px;  word-wrap: break-word;">Video piaciuti</h4>
                                 </div>
                             </li>
                         </ul>
@@ -175,7 +175,7 @@
                         <!--linea separatoria-->
                         <hr size="2" width="130" style="margin-left: 23px; color: gray;" v-if="burgerOn">
                         <div style="margin-left: 25px;" v-if="burgerOn" id="altroYouTube">
-                            <h3 style="margin-top: -2px;">Altro da YouTube</h3>
+                            <h3 style="margin-top: -2px; word-wrap: break-word;">Altro da YouTube</h3>
                             <div class="iconeLaterali" id="youTubeMusic" v-on:click="paginaCorrente('youTubeMusic')" v-on:mouseleave="leaveBottoneAside('youTubeMusic')" v-on:mouseover="overBottoneAside('youTubeMusic')">
                                 <i class="fa-brands fa-youtube"></i>
                                 <h4 style="margin-left: 8px;">YouTube Music</h4>
@@ -244,9 +244,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="app.js"></script>

@@ -84,6 +84,7 @@ body{
     display: inline-flex;
     flex-direction: column;
     max-height: 620px;
+    min-width: 180px;
     width: 100%;
     margin-left: -22px;
     flex: 2;
@@ -112,6 +113,7 @@ article{
     grid-column: 2/4;
     gap: 3px;
     overflow: auto;
+    margin-bottom: 40px;
 }
 
 .iconeLaterali{
@@ -148,7 +150,6 @@ section{
     height: 200px;
     background-color: red;
     margin-left: 25px;
-    margin-top: 8px;
     border-radius: 25px;
     flex: 200px;
 }
@@ -326,37 +327,3 @@ button:hover {
 *::-webkit-scrollbar-track {
     background-color: white;
 }
-
-
-/*
-body{
-        overflow: hidden;
-    }
-    
-    
-
-    
-
-    
-
-    .iconeLaterali{
-        display: inline-flex;
-        flex-direction: column;
-        align-items: baseline;
-    }
-
-    .navigatori{
-        display: flex;
-        height: auto;
-        overflow-x: auto;
-    }
-
-    .article{
-        height: 80%;
-        overflow: hidden;
-    }
-
-
-
-
-*/
