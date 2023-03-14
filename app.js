@@ -15,7 +15,8 @@ var app = new Vue({
         guardaPiuTardi: [{"descrizione":"guardaPiuTardi1"},{"descrizione":"guardaPiuTardi2"},{"descrizione":"guardaPiuTardi3"},{"descrizione":"guardaPiuTardi4"},{"descrizione":"guardaPiuTardi5"}],
         burgerOn: true,
         paginaLogin : false,
-        menu:false
+        menu:false,
+        iconaPassowrd:true,
     },
     methods: {
         paginaCorrente: function(paginaNuova){
@@ -155,6 +156,15 @@ var app = new Vue({
             if(self.burgerOn){
                 document.getElementById(self.paginaC).style.backgroundColor = "#d3d3d3";
             }
+        },
+        mostraPassword: function(){
+            var self=this;
+            if(self.iconaPassowrd){
+                document.getElementById("password").type="text";
+            }else{
+                document.getElementById("password").type="password";
+            }
+            self.iconaPassowrd = !self.iconaPassowrd;
         }
     },
     mounted() {

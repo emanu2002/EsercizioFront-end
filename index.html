@@ -19,12 +19,21 @@
                 <div class="login">
                     <label for="username"><b>Username</b></label>
                     <input type="text" id="username" placeholder="Username" class="inputText">
-    
+                    
                     <label for="password"><b>Password</b></label>
-                    <input type="password" id="password" placeholder="Password" class="inputText">
+                    <div style="display: flex;">
+                        <input type="password" id="password" placeholder="Password" class="inputText" >
+                        <span v-if="iconaPassowrd">
+                            <i class="fa-solid fa-eye" v-on:click="mostraPassword()"></i>        
+                        </span>
+                        <span v-else>
+                            <i class="fa-solid fa-eye-slash" v-on:click="mostraPassword()"></i>        
+                        </span>
+
+                    </div>
     
                     <input type="button" value="Login" v-on:click="autenticazione()" id="btnLogin" >
-                    <input type="button" value="Annulla" v-on:click="paginaLogin = !paginaLogin" id="btnAnnulla" style="background-color: red; margin-top: 5px ;margin-left: 35%; width: 100px; color: white;">
+                    <input type="button" value="Annulla" v-on:click="paginaLogin = !paginaLogin" id="btnAnnulla" class="btnAnnulla" >
                     
                 </div>
             </form>
@@ -45,7 +54,7 @@
         
                     <div style="display: flex; width: 70%; align-items: center;">
                         <!--barra di ricerca-->
-                        <input type="search" id="ricerca" class="barraDiRicerca" placeholder="Cerca">
+                        <input type="text" id="ricerca" class="barraDiRicerca" placeholder="Cerca">
                         <button class="iconaRicerca"><i class="fa-solid fa-magnifying-glass fa-lg" ></i></button>
                         <img src="microfono.png" alt="microfono" class="immagine2" >
                     </div>
